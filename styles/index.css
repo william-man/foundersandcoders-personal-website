@@ -1,25 +1,13 @@
 @font-face {
-  font-family: "roboto-light";
-  src: url("./fonts/Roboto/Roboto-Light.ttf");
-}
-@font-face {
-  font-family: "roboto-regular";
-  src: url("./fonts/Roboto/Roboto-Regular.ttf");
-}
-@font-face {
-  font-family: "roboto-bold";
-  src: url("./fonts/Roboto/Roboto-Bold.ttf");
-}
-@font-face {
   font-family: "objectivity-regular";
-  src: url("./fonts/objectivity/Objectivity/Objectivity-Regular.otf")
+  src: url("../fonts/objectivity/Objectivity/Objectivity-Regular.otf")
       format("opentype"),
-    url("./fonts/objectivity/Objectivity/Objectivity-Regular.woff2")
+    url("../fonts/objectivity/Objectivity/Objectivity-Regular.woff2")
       format("woff2");
 }
 @font-face {
   font-family: "fragile-bombers";
-  src: url("./fonts/fragile-bombers/Fragile\ Bombers.otf") format("opentype");
+  src: url("../fonts/fragile-bombers/Fragile\ Bombers.otf") format("opentype");
 }
 
 html {
