@@ -1,0 +1,107 @@
+@media only screen and (max-width: 414px) {
+  .nav-container {
+    top: 88vh;
+    margin-bottom: 10px;
+  }
+  .nav-item {
+    padding: 0px;
+  }
+  button {
+    width: 90px;
+    height: 45px;
+    margin: 0px;
+    border-radius: 0;
+    font-size: 0.8rem;
+  }
+
+  #home {
+    margin: auto;
+  }
+  /*//////////////////////////////////*/
+  #aboutme {
+    grid-area: aboutme;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto auto auto auto;
+    margin: auto;
+    width: 100%;
+    padding: 0;
+  }
+  #aboutme-intro {
+    grid-column: 1;
+    grid-row: 1;
+    padding: 0 25px;
+  }
+  #aboutme-info {
+    grid-column: 1;
+    grid-row: 2;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows:
+      fit-content(400px) fit-content(400px) fit-content(400px) fit-content(
+        400px
+      )
+      fit-content(400px);
+    margin-top: 0;
+    padding-top: 0;
+  }
+  #aboutme-python {
+    grid-column: 1;
+    grid-row: 1;
+    padding: 0 25px;
+    margin: 25px auto;
+  }
+  #aboutme-python-image {
+    grid-column: 1;
+    grid-row: 2;
+    padding: 0 25px;
+    margin: 25px auto;
+  }
+  #aboutme-frontend {
+    grid-column: 1;
+    grid-row: 3;
+    padding: 0 25px;
+    margin: 25px auto;
+  }
+  #frontend-link {
+    grid-column: 1;
+    grid-row: 4;
+    padding: 0 25px;
+    margin: 25px auto;
+  }
+  #aboutme-info-arrow {
+    grid-column: 1;
+    grid-row: 5;
+    margin: 25px auto;
+  }
+  /*/ //////////////////////////////////*/
+  #interests {
+    display: grid;
+    grid-template-columns: minmax(200px, 500px);
+    grid-template-rows: fit-content(400px) fit-content(400px) fit-content(400px);
+    margin-top: 100vh;
+  }
+
+  #interests-info {
+    grid-column: 1;
+    grid-row: 1;
+    padding: 0 25px;
+  }
+  #interests-image {
+    grid-column: 1;
+    grid-row: 2;
+    padding: 0 25px;
+  }
+  #interests-arrow {
+    grid-column: 1;
+    grid-row: 3;
+    margin: auto;
+  }
+  /*/ //////////////////////////////////*/
+  #objective {
+    margin-top: 100vh;
+  }
+  #objective-info {
+    padding: 0 25px;
+  }
+}

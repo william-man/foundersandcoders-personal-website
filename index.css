@@ -10,6 +10,17 @@
   font-family: "roboto-bold";
   src: url("./fonts/Roboto/Roboto-Bold.ttf");
 }
+@font-face {
+  font-family: "objectivity-regular";
+  src: url("./fonts/objectivity/Objectivity/Objectivity-Regular.otf")
+      format("opentype"),
+    url("./fonts/objectivity/Objectivity/Objectivity-Regular.woff2")
+      format("woff2");
+}
+@font-face {
+  font-family: "fragile-bombers";
+  src: url("./fonts/fragile-bombers/Fragile\ Bombers.otf") format("opentype");
+}
 
 html {
   scroll-behavior: smooth;
@@ -18,167 +29,229 @@ html {
 /*///////////////////////////////////*/
 
 body {
-  background-image: url("./bg/polygon-scatter-haikei-2.svg");
+  margin: 0;
+  padding: 0;
   color: #fff;
 }
-/*///////////////////////////////////*/
+
+#canvas {
+  position: fixed;
+  box-sizing: border-box;
+  z-index: -1;
+  background-color: #03091d;
+  height: 100%;
+  width: 100%;
+}
+/*/ //////////////////////////////////*/
 
 .wrapper {
+  z-index: 0;
   display: grid;
-  grid-template-columns: auto auto;
   grid-template-areas:
-    "header header"
-    "content content"
-    "footer footer";
-  max-width: 1330px;
+    "header"
+    "content"
+    "ooter";
+
   margin: auto;
+  padding-top: 2vh;
 }
 /*///////////////////////////////////*/
 /*nav*/
 
-.header {
-  grid-area: header;
-  position: sticky;
-  display: grid;
-  grid-template-columns: auto auto;
-}
-.nav-container-1 {
-  grid-column: 1;
-  width: 900px;
-}
 .nav-container {
-  grid-column: 2;
-  display: grid;
-  grid-template-columns: auto auto;
+  grid-area: header;
+  position: fixed;
+  display: flex;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  margin-top: 30px;
+  justify-content: center;
 }
 .nav-item {
-  padding: 30px 0px;
-  text-align: right;
+  padding: 10px 10px;
+  text-align: center;
 }
 
-.nav-item-1 {
-  grid-column: 1;
-}
-.nav-item-2 {
-  grid-column: 2;
-}
-.link {
-  font-size: 1.5rem;
-  font-family: "roboto-light";
-  text-decoration: none;
+button {
+  width: 100px;
+  min-width: 60px;
+  height: 37px;
+  font-family: "objectivity-regular";
+  font-size: 1rem;
+  border-style: none;
+  border-radius: 5px;
   color: #fff;
+  background-color: #552b72;
+  opacity: 0.5;
+  transition: opacity 1s;
 }
-.link:hover {
-  font-family: "roboto-bold";
+button:hover {
+  opacity: 1;
+  cursor: pointer;
 }
-.link:visited {
-  color: #fff;
-  text-decoration: none;
+.active-button {
+  opacity: 1;
 }
+
 /*///////////////////////////////////*/
 
 main {
   grid-area: content;
   display: grid;
-  grid-template-rows: auto auto auto;
-  font-family: "roboto-regular";
+  grid-template-areas:
+    "home"
+    "aboutme"
+    "interests"
+    "objective";
+  font-family: "objectivity-regular";
   font-size: 1.3rem;
+  width: 100%;
 }
-/*///////////////////////////////////*/
+/*/ //////////////////////////////////*/
+
 /*content*/
 
-#name {
-  grid-row: 1;
-  grid-column: 1/3;
+#home {
+  grid-area: home;
+  display: grid;
   text-align: center;
-  margin: auto;
-  padding: 35vh 0;
+  height: 100vh;
+  align-items: center;
 }
-h1 {
-  font-size: 6rem;
-  font-family: "roboto-bold";
+#home-h1 {
+  font-size: 4.5rem;
+  font-family: "fragile-bombers";
 }
+
+.arrow {
+  width: 50px;
+  height: 50px;
+  background-color: #fff;
+  border-radius: 25px;
+  opacity: 0.4;
+  transition: opacity 1s;
+}
+.arrow:hover {
+  box-shadow: 5px;
+  opacity: 1;
+}
+
 /*//////////////////////////////////*/
 
-#description {
-  grid-row: 2;
-  grid-column: 1/3;
+#aboutme {
+  grid-area: aboutme;
   display: grid;
   grid-template-columns: 50% 50%;
   grid-template-rows: auto auto auto auto;
-  padding-top: 5vh;
-  padding-bottom: 35vh;
-  gap: 200px 0px;
+  margin: auto;
+  width: 100%;
 }
 
-#intro {
+#aboutme-intro {
   grid-column: 1/3;
   grid-row: 1;
-  font-size: 2rem;
   text-align: center;
-  margin-bottom: 100px;
+  height: 100vh;
+  max-width: 1000px;
+  margin: auto;
+  display: grid;
+  align-items: center;
 }
-#python {
+#aboutme-info {
+  grid-column: 1/3;
+  grid-row: 2;
+  display: grid;
+  grid-template-columns: minmax(200px, 500px) minmax(200px, 500px);
+  grid-template-rows: fit-content(400px) fit-content(400px) fit-content(400px);
+  height: 100vh;
+  align-items: center;
+  margin: auto;
+  margin-top: 25vh;
+  padding-top: 25vh;
+}
+
+#aboutme-python {
   grid-column: 1;
-  grid-row: 2;
+  grid-row: 1;
   margin: auto;
+  padding: 20px;
 }
-#python-image {
+#aboutme-python-image {
   grid-column: 2;
-  grid-row: 2;
-  width: auto;
+  grid-row: 1;
+  max-width: 100%;
   height: auto;
-  max-width: 600px;
-  max-height: 338px;
   margin: auto;
+  padding: 20px;
 }
-#frontend {
+
+#aboutme-frontend {
   grid-column: 2;
-  grid-row: 3;
+  grid-row: 2;
   margin: auto;
+  padding: 20px;
 }
 #frontend-link {
   grid-column: 1;
-  grid-row: 3;
+  grid-row: 2;
   margin: auto;
+  padding: 20px;
 }
 #frontend-image {
-  width: auto;
+  max-width: 100%;
   height: auto;
-  max-width: 600px;
-  max-height: 338px;
 }
-#interests {
-  grid-column: 1;
-  grid-row: 4;
+#aboutme-info-arrow {
+  grid-column: 1/3;
+  grid-row: 3;
+  align-items: center;
   margin: auto;
 }
 
-#objective {
-  grid-row: 3;
+/*/ //////////////////////////////////*/
+#interests {
+  grid-area: interests;
+  display: grid;
+  grid-template-columns: minmax(200px, 500px) minmax(200px, 500px);
+  grid-template-rows: fit-content(400px) fit-content(400px);
+  height: 100vh;
+  align-items: center;
+  margin: auto;
+  margin-top: 25vh;
+  padding-top: 25vh;
+}
+#interests-info {
+  grid-column: 1;
+  grid-row: 1;
+  padding: 35px;
+}
+#interests-image {
+  grid-column: 2;
+  grid-row: 1;
+  padding: 35px;
+}
+#interests-arrow {
   grid-column: 1/3;
-  font-size: 2rem;
-  padding-bottom: 32vh;
+  grid-row: 2;
+  margin: auto;
 }
 
 /*///////////////////////////////////*/
+#objective {
+  grid-area: objective;
+  height: 100vh;
+  max-width: 1000px;
+  margin: auto;
+  display: grid;
+  align-items: center;
+}
+
+/*/ //////////////////////////////////*/
 
 .footer {
   grid-area: footer;
   grid-column: 1/3;
   margin: 10vh auto;
-}
-
-#footer-svg {
-  height: 50px;
-  width: 50px;
-  background-color: blue;
-  border-radius: 14px;
-  opacity: 0.6;
-
-  transition: 1s;
-}
-
-#footer-svg:hover {
-  opacity: 1;
 }

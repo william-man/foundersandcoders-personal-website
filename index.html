@@ -3,79 +3,135 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Personal website</title>
     <link rel="stylesheet" href="./index.css" />
+    <link rel="stylesheet" href="./media1280.css" />
+    <link rel="stylesheet" href="./media896.css" />
+    <link rel="stylesheet" href="./media414.css" />
+
+
     <script src="./index.js"></script>
+    
   </head>
-  <body>
+  
+    <canvas id="canvas" onresize="changeCanvasSize()"
+      >Your browser does not support the HTML canvas tag.</canvas
+    >
+
     <div class="wrapper">
-      <nav class="header">
-        <div class="nav-container-1"></div>
-        <div class="nav-container">
-          <div class="nav-item nav-item-1">
-            <a class="link" href="#description">About Me</a>
-          </div>
-          <div class="nav-item nav-item-2">
-            <a class="link" href="#objective">Objective</a>
-          </div>
+
+      <nav class="nav-container">
+        <div class="nav-item">
+          <button
+            id="nav-home"
+            class="nav-button active-button"
+            onclick='buttonClick("nav-home","home"); '
+          >
+            Home
+          </button>
+        </div>
+        <div class="nav-item">
+          <button
+            id="nav-aboutme"
+            class="nav-button"
+            onclick='buttonClick("nav-aboutme","aboutme")'
+          >
+            About Me
+          </button>
+        </div>
+        <div class="nav-item">
+          <button
+            id="nav-interests"
+            class="nav-button"
+            onclick='buttonClick("nav-interests","interests") '
+          >
+            Interests
+          </button>
+        </div>
+        <div class="nav-item">
+          <button
+            id="nav-objective"
+            class="nav-button"
+            onclick='buttonClick("nav-objective","objective") '
+          >
+            Objective
+          </button>
         </div>
       </nav>
+
       <main>
-        <div id="name">
-          <h1>Hi, my name is William</h1>
+        <div id="home" class="info-tab">
+          <div>
+            <h1 id="home-h1">Hi, my name is William</h1>
+            <a id="home-h1-a" href="#aboutme" onclick='buttonClick("nav-aboutme","aboutme")'><img class="arrow" src="./svg/down-arrow-svgrepo-com.svg"></a>
+            
+          </div>
         </div>
-        <div id="description">
-          <p id="intro">
-            I am an assistant manager for a family business who is transitioning
-            to be a frontend developer.
-          </p>
 
-          <p id="python">
-            I began my programming journey when I was in university with Python,
-            initially engaging in small exercises and projects as a hobby. At
-            one point, I contemplated a career in data science and delved into
-            machine learning, learning about data grouping and manipulation.
-            However, I soon discovered that my true passion resided in the
-            process of building projects rather than working extensively with
-            data.
-          </p>
-
-          <img
-            id="python-image"
-            src="./images/python-logo-only.svg"
-            alt="python logo"
-          />
-          <p id="frontend">
-            This led to my transition towards frontend development where I began
-            learning HTML, CSS, Javascript and React, building small web apps
-            like a pomodoro clock and a calculator. To further challenge myself,
-            I ventured into working with APIs from platforms like
-            OpenWeatherMap, integrating real-time weather data into an
-            application. As my proficiency grew, I applied my skills to revamp
-            my family business' website, enhancing its accessibility and
-            ledgibility.
-          </p>
-          <a href="https://www.oriental-takeaway.co.uk/" id="frontend-link"
-            ><img
-              src="./images/shop-screenshot.png"
-              alt="oriental screenshot"
-              id="frontend-image"
-          /></a>
-
-          <p id="interests">
-            Outside of this, I enjoy exploring technical hobbies like
-            electronics and pc modding. I built a custom watercooling loop for
-            my pc to reduce temperatures, noise and better performance as well
-            as its aesthetics. I have also modded a mechanical keyboard,
-            changing the switches and customising it for a better typing
-            experience.
-          </p>
-          <img />
+        <div id="aboutme" class="info-tab">
+          <div id="aboutme-intro">
+            <div>
+              <p>
+                I am an assistant manager for a family business who is transitioning
+                to be a frontend developer.
+             </p>
+              <a href="#aboutme-info"><img class="arrow" src="./svg/down-arrow-svgrepo-com.svg"></a>
+            </div>
+          </div>
+          <div id="aboutme-info"  >
+            <p id="aboutme-python"class="">
+              I began my programming journey when I was in university with Python,
+              initially engaging in small exercises and projects as a hobby. At
+              one point, I contemplated a career in data science and delved into
+              machine learning, learning about data grouping and manipulation.
+              However, I soon discovered that my true passion resided in the
+              process of building projects rather than working extensively with
+              data.
+            </p>
+            <img
+              id="aboutme-python-image"
+              src="./images/python-logo-only.svg"
+              alt="python logo"
+              class=""
+            />
+            <p id="aboutme-frontend" class="">
+              I began my programming journey when I was in university with Python,
+              initially engaging in small exercises and projects as a hobby. At
+              one point, I contemplated a career in data science and delved into
+              machine learning, learning about data grouping and manipulation.
+              However, I soon discovered that my true passion resided in the
+              process of building projects rather than working extensively with
+              data.
+            </p>
+            <a href="https://www.oriental-takeaway.co.uk/" id="frontend-link"
+              ><img
+                src="./images/shop-screenshot.png"
+                alt="oriental screenshot"
+                id="frontend-image"
+                class=""/>
+            </a>
+            <a href="#interests" id="aboutme-info-arrow" onclick='buttonClick("nav-interests","interests")' ><img class="arrow" src="./svg/down-arrow-svgrepo-com.svg"></a>
+          </div>
+          
         </div>
-        <div id="objective">
-          <p>
+        <div id="interests" class="info-tab">
+          
+              <p id="interests-info">
+                Outside of this, I enjoy exploring technical hobbies like
+                electronics and pc modding. I built a custom watercooling loop for
+                my pc to reduce temperatures, noise and better performance as well
+                as its aesthetics. I have also modded a mechanical keyboard,
+                changing the switches and customising it for a better typing
+                experience.
+              </p>
+              <img id="interest-image" src=""/>
+            <a href="#objective" id="interests-arrow"  onclick='buttonClick("nav-objective","objective")'><img class="arrow" src="./svg/down-arrow-svgrepo-com.svg"></a>
+          
+        </div>
+        <div id="objective" class="info-tab">
+          <p id="objective-info">
             I am looking to transition into a career as a web developer because
-            I find it interesting how I can combine my creativity and logical
+            I find it fascinating how I can combine my creativity and logical
             thinking to create something that helps others. In particular, I
             think it's incredible the ways web apps have been designed and
             evolved to simplify tasks and connect people in their daily lives. I
@@ -87,11 +143,8 @@
           </p>
         </div>
       </main>
-      <div class="footer">
-        <a href="#name" id="footer-link"
-          ><img src="./svg/back-to-top-svgrepo-com.svg" id="footer-svg"
-        /></a>
-      </div>
     </div>
+  
   </body>
+  <script src="./canvas-pattern.js"></script>
 </html>

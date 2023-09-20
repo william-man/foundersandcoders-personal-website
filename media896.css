@@ -1,0 +1,34 @@
+@media only screen and (max-width: 896px) {
+  main {
+    font-size: 1rem;
+  }
+
+  #aboutme-python {
+    padding: 35px;
+    padding-left: 80px;
+  }
+  #aboutme-python-image {
+    padding: 35px;
+    padding-right: 80px;
+  }
+  #aboutme-frontend {
+    padding: 35px;
+    padding-right: 80px;
+  }
+  #frontend-link {
+    padding: 35px;
+    padding-left: 80px;
+  }
+
+  #interests-info {
+    padding: 35px;
+    padding-left: 80px;
+  }
+  #interests-image {
+    padding: 35px;
+    padding-right: 80px;
+  }
+  #objective-info {
+    padding: 0 80px;
+  }
+}
