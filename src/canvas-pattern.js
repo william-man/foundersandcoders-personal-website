@@ -66,6 +66,8 @@ class Triangle {
   }
 }
 
+//initialise 6 shapes
+
 const square_1 = new Square(
   Math.random() * canvas.width,
   0,
@@ -110,7 +112,7 @@ const shapes = [
   hexagon_1,
   hexagon_2,
 ];
-
+// randomise colours of shapes after reaching y=canvas.height
 function randomColor() {
   const red = Math.floor(Math.random() * 256);
   const green = Math.floor(Math.random() * 256);
@@ -118,7 +120,7 @@ function randomColor() {
   const color = `rgb(${red}, ${green}, ${blue})`;
   return color;
 }
-
+// update and redraw shapes
 function update() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   for (let i = 0; i < shapes.length; i++) {
@@ -133,15 +135,18 @@ function update() {
   }
   requestAnimationFrame(update);
 }
+// call animation loop on page load and screen resize
+const animate = window.requestAnimationFrame(update);
+window.addEventListener("load", function () {
+  animate;
+});
 
-window.addEventListener("load", function () {});
-window.requestAnimationFrame(update);
 window.addEventListener("resize", function () {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
   ctx.lineWidth = 5;
   ctx.lineCap = "round";
   color = "#f123f2";
-  window.cancelAnimationFrame();
-  window.requestAnimationFrame(update);
+  window.cancelAnimationFrame(animate);
+  animate;
 });
