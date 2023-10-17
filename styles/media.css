@@ -1,13 +1,13 @@
 @font-face {
   font-family: "objectivity-regular";
-  src: url("../fonts/objectivity/Objectivity/Objectivity-Regular.otf")
+  src: url("./fonts/objectivity/Objectivity/Objectivity-Regular.otf")
       format("opentype"),
-    url("../fonts/objectivity/Objectivity/Objectivity-Regular.woff2")
+    url("./fonts/objectivity/Objectivity/Objectivity-Regular.woff2")
       format("woff2");
 }
 @font-face {
   font-family: "fragile-bombers";
-  src: url("../fonts/fragile-bombers/Fragile\ Bombers.otf") format("opentype");
+  src: url("./fonts/fragile-bombers/Fragile\ Bombers.otf") format("opentype");
 }
 
 html {
@@ -42,6 +42,7 @@ body {
 
   margin: auto;
   padding-top: 2vh;
+  background-color: rgba(0, 0, 0, 0.7);
 }
 /*///////////////////////////////////*/
 /*nav*/
@@ -218,12 +219,15 @@ main {
 #interests-image {
   grid-column: 2;
   grid-row: 1;
-  padding: 35px;
+  margin: auto;
+  padding: 20px;
+  max-width: 448px;
 }
 #interests-arrow {
   grid-column: 1/3;
   grid-row: 2;
   margin: auto;
+  margin-top: 20px;
 }
 
 /*///////////////////////////////////*/
